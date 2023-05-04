@@ -1,10 +1,8 @@
-import os
-import configparser
+from RPA.Robocorp.WorkItems import WorkItems
 
-config = configparser.ConfigParser()
-config_file_path = os.path.join(os.path.dirname(__file__), 'config.ini')
-config.read(config_file_path)
+wi = WorkItems()
+wi.get_input_work_item()
 
-SEARCH_PHRASE = config.get('DEFAULT', 'search_phrase')
-NEWS_SECTIONS = config.get('DEFAULT', 'news_sections').split(',')
-MONTH_AMOUNT = config.getint('DEFAULT', 'month_amount')
+SEARCH_PHRASE = wi.get_work_item_variable('search_phrase')
+NEWS_SECTIONS = wi.get_work_item_variable('news_sections')
+MONTH_AMOUNT = wi.get_work_item_variable('month_amount')
