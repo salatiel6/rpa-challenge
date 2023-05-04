@@ -11,7 +11,8 @@ default_work_item = {
 
 SEARCH_PHRASE = wi.get_work_item_variable(
     'search_phrase', default_work_item['search_phrase'])
-NEWS_SECTIONS = wi.get_work_item_variable(
+news_sections = wi.get_work_item_variable(
     'news_sections', default_work_item['news_sections'])
+NEWS_SECTIONS = [section.upper() for section in news_sections]
 MONTH_AMOUNT = wi.get_work_item_variable(
     'month_amount', default_work_item['month_amount'])
