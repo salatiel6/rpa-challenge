@@ -13,8 +13,11 @@ def main():
         time.sleep(3)
         articles = article_scrapper.get_articles()
 
-    file_handler = FileHandler()
-    file_handler.save_to_excel(articles, "articles.xlsx")
+    if articles:
+        file_handler = FileHandler()
+        file_handler.save_to_excel(articles, "articles.xlsx")
+    else:
+        raise ValueError("No articles found")
 
 
 if __name__ == "__main__":
