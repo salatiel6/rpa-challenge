@@ -1,8 +1,17 @@
 from RPA.Robocorp.WorkItems import WorkItems
 
 wi = WorkItems()
-input_work_item = wi.get_input_work_item()
+wi.get_input_work_item()
 
-SEARCH_PHRASE = input_work_item.get("search_phrase")
-NEWS_SECTIONS = input_work_item.get("news_sections")
-MONTH_AMOUNT = input_work_item.get("month_amount")
+default_work_item = {
+          "search_phrase": "python",
+          "news_sections": ["ARTS", "BOOKS"],
+          "month_amount": 3
+        }
+
+SEARCH_PHRASE = wi.get_work_item_variable(
+    'search_phrase', default_work_item['search_phrase'])
+NEWS_SECTIONS = wi.get_work_item_variable(
+    'news_sections', default_work_item['news_sections'])
+MONTH_AMOUNT = wi.get_work_item_variable(
+    'month_amount', default_work_item['month_amount'])
