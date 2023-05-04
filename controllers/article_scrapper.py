@@ -157,7 +157,7 @@ class ArticleScraper:
                     module_dir = os.path.dirname(__file__)
 
                     # Create a directory for output files if it doesn't exist
-                    filedir = os.path.join(module_dir, '.', 'outputs')
+                    filedir = os.path.join(module_dir, '', 'outputs')
                     if not os.path.exists(filedir):
                         os.makedirs(filedir)
 
