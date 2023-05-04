@@ -24,8 +24,7 @@ class ArticleScraper:
 
     def open_the_website(self, url):
         try:
-            self.browser_lib.open_available_browser(
-                url, browser_selection="edge")
+            self.browser_lib.open_available_browser(url)
 
             # The following lines set the width and height of the browser
             # window to 1920x1080 pixels.
