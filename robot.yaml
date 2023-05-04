@@ -1,6 +1,13 @@
 tasks:
   Run Python:
     shell: python main.py
+    env:
+      INPUT_WORK_ITEM: >
+        {
+          "search_phrase": "python",
+          "news_sections": ["ARTS", "BOOKS"],
+          "month_amount": 3
+        }
 
 condaConfigFile: conda.yaml
 artifactsDir: ./controllers/outputs
